@@ -10,7 +10,6 @@ body, html {
     position: relative;
     height: 100%;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     padding: 20px;
     background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
@@ -111,4 +110,19 @@ h1 {
     100% {
         transform: translateY(-100px) scale(0.5);
     }
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.images img {
+    width: 150px;
+    height: 225px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
 }
