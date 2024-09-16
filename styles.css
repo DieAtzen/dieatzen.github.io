@@ -1,18 +1,18 @@
-
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
 }
-
 
 .background-container {
     position: relative;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    padding: 20px;
     background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
     background-size: 400% 400%;
     animation: gradientBG 20s ease infinite;
@@ -24,32 +24,36 @@ body, html {
     100% { background-position: 0% 0%; }
 }
 
-
 .content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
+    text-align: left;
     color: white;
+    max-width: 400px;
+    z-index: 2;
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 0;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    letter-spacing: 2px;
 }
 
 .discord-button {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     margin-top: 20px;
-    padding: 15px 30px;
+    padding: 10px 25px;
     background: linear-gradient(135deg, #5865F2, #4752c4);
     color: white;
     text-decoration: none;
     font-size: 1.2rem;
-    border-radius: 30px;
+    border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-button i {
+    margin-right: 10px;
 }
 
 .discord-button:hover {
@@ -57,23 +61,27 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-
 .links {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .link {
+    display: flex;
+    align-items: center;
     color: #ffffff;
     text-decoration: none;
     font-size: 1rem;
-    margin: 0 10px;
+    margin: 10px 0;
     transition: color 0.3s ease;
+}
+
+.link i {
+    margin-right: 10px;
 }
 
 .link:hover {
     color: #feb47b;
 }
-
 
 .particles {
     position: absolute;
@@ -95,12 +103,12 @@ h1 {
 
 @keyframes float {
     0% {
-        transform: translateY(-50px);
+        transform: translateY(-100px) scale(0.5);
     }
     50% {
-        transform: translateY(50px);
+        transform: translateY(100px) scale(1.2);
     }
     100% {
-        transform: translateY(-50px);
+        transform: translateY(-100px) scale(0.5);
     }
 }
