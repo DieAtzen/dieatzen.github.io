@@ -57,6 +57,23 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
+/* Links Styling */
+.links {
+    margin-top: 30px;
+}
+
+.link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.link:hover {
+    color: #feb47b;
+}
+
 /* Particles Styling */
 .particles {
     position: absolute;
