@@ -4,128 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Die Atzen</title>
-    <style>
-        body, html {
-            margin: 0;
-            height: 100%;
-            font-family: 'Arial', sans-serif;
-            overflow: hidden;
-            background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-        }
-
-        h1 {
-            font-size: 5rem;
-            margin: 0;
-            letter-spacing: 5px;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
-            transition: color 0.5s ease;
-        }
-
-        .discord-button {
-            margin-top: 30px;
-            text-decoration: none;
-            background: radial-gradient(circle, #5865F2, #4752c4);
-            color: white;
-            padding: 15px 40px;
-            border-radius: 30px;
-            font-size: 1.5rem;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .discord-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
-        }
-
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.7);
-            opacity: 0.5;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(-50px);
-            }
-            50% {
-                transform: translateY(50px);
-            }
-            100% {
-                transform: translateY(-50px);
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="particles"></div>
-
-    <div class="container">
-        <h1>Die Atzen</h1>
-        <a href="https://discord.gg/V62cGtA5Qr" class="discord-button" target="_blank">Join Discord</a>
+    <div class="background-container">
+        <div class="particles"></div>
+        <div class="content">
+            <h1>Die Atzen</h1>
+            <a href="https://discord.gg/V62cGtA5Qr" class="discord-button" target="_blank">Join Discord</a>
+        </div>
     </div>
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.querySelector('.particles');
-
-            for (let i = 0; i < 100; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                const size = Math.random() * 10 + 5;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-
-                const top = Math.random() * 100;
-                const left = Math.random() * 100;
-                particle.style.top = `${top}%`;
-                particle.style.left = `${left}%`;
-
-                container.appendChild(particle);
-            }
-
-            const title = document.querySelector('h1');
-            let colors = ['#ff7e5f', '#feb47b', '#86a8e7', '#91eae4'];
-            let currentIndex = 0;
-
-            setInterval(() => {
-                title.style.color = colors[currentIndex];
-                currentIndex = (currentIndex + 1) % colors.length;
-            }, 2000);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
