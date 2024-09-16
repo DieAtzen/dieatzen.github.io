@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.querySelector('.main-content');
     const links = document.querySelectorAll('.link');
 
-    // Smooth scroll to main content
     scrollIndicator.addEventListener('click', () => {
         window.scrollTo({
             top: mainContent.offsetTop,
@@ -11,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Animate scroll indicator
     const animateScrollIndicator = () => {
         scrollIndicator.classList.add('bounce');
         setTimeout(() => scrollIndicator.classList.remove('bounce'), 1500);
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animateScrollIndicator();
     setInterval(animateScrollIndicator, 3000);
 
-    // Dynamic link hover effect
     links.forEach(link => {
         link.addEventListener('mouseover', () => {
             link.style.transform = 'scale(1.1)';
@@ -30,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Dino game implementation
     const canvas = document.getElementById('gameCanvas');
     const ctx = canvas.getContext('2d');
     let dino;
