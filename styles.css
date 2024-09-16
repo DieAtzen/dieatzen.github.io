@@ -1,4 +1,4 @@
-/* Reset some basic elements */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@ body, html {
     font-family: 'Arial', sans-serif;
 }
 
-/* Background Gradient */
+
 .background-container {
     position: relative;
     height: 100%;
@@ -24,7 +24,7 @@ body, html {
     100% { background-position: 0% 0%; }
 }
 
-/* Content Styling */
+
 .content {
     position: relative;
     z-index: 2;
@@ -57,7 +57,7 @@ h1 {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* Links Styling */
+
 .links {
     margin-top: 30px;
 }
@@ -74,7 +74,7 @@ h1 {
     color: #feb47b;
 }
 
-/* Particles Styling */
+
 .particles {
     position: absolute;
     top: 0;
