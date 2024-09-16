@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const scrollIndicator = document.getElementById('scroll-indicator');
+    const mainContent = document.querySelector('.main-content');
     const links = document.querySelectorAll('.link');
 
     // Smooth scroll to main content
     scrollIndicator.addEventListener('click', () => {
         window.scrollTo({
-            top: document.querySelector('.main-content').offsetTop,
+            top: mainContent.offsetTop,
             behavior: 'smooth'
         });
     });
