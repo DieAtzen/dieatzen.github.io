@@ -6,49 +6,163 @@
     <title>Die Atzen</title>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
+            height: 100%;
             font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            background-size: cover;
             flex-direction: column;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparent url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
         .container {
+            z-index: 2;
             text-align: center;
+            color: white;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
         }
 
         h1 {
-            font-size: 5rem;
-            color: white;
-            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+            font-size: 6rem;
             margin: 0;
+            letter-spacing: 5px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+            }
+            to {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 1), 0 0 50px rgba(255, 255, 255, 0.8), 0 0 70px rgba(255, 255, 255, 0.6);
+            }
         }
 
         .discord-button {
-            margin-top: 20px;
+            margin-top: 40px;
             text-decoration: none;
-            background-color: #5865F2;
+            background: radial-gradient(circle at top right, #5865F2, #4752c4);
             color: white;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 1.5rem;
-            box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
-            transition: background-color 0.3s ease;
+            padding: 20px 50px;
+            border-radius: 50px;
+            font-size: 2rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .discord-button:hover {
-            background-color: #4752c4;
+            transform: scale(1.2);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+        }
+
+        .floating-objects {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: moveUpDown 10s ease-in-out infinite;
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes moveUpDown {
+            0%, 100% {
+                transform: translateY(-20px);
+            }
+            50% {
+                transform: translateY(20px);
+            }
+        }
+
+        #circle1 {
+            width: 150px;
+            height: 150px;
+            top: 20%;
+            left: 30%;
+        }
+
+        #circle2 {
+            width: 200px;
+            height: 200px;
+            top: 70%;
+            left: 50%;
+        }
+
+        #circle3 {
+            width: 100px;
+            height: 100px;
+            top: 40%;
+            left: 80%;
         }
     </style>
 </head>
 <body>
+
+    <div class="stars"></div>
+    
+    <div class="floating-objects">
+        <div id="circle1" class="circle"></div>
+        <div id="circle2" class="circle"></div>
+        <div id="circle3" class="circle"></div>
+    </div>
+
     <div class="container">
         <h1>Die Atzen</h1>
         <a href="https://discord.gg/V62cGtA5Qr" class="discord-button" target="_blank">Join Discord</a>
     </div>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const circles = document.querySelectorAll('.circle');
+            circles.forEach(circle => {
+                const size = Math.random() * 100 + 50;
+                circle.style.width = `${size}px`;
+                circle.style.height = `${size}px`;
+
+                const top = Math.random() * 100;
+                const left = Math.random() * 100;
+                circle.style.top = `${top}%`;
+                circle.style.left = `${left}%`;
+            });
+
+            let glowColors = ['#ff7e5f', '#feb47b', '#86a8e7', '#91eae4'];
+            const title = document.querySelector('h1');
+            let currentIndex = 0;
+
+            setInterval(() => {
+                title.style.color = glowColors[currentIndex];
+                currentIndex = (currentIndex + 1) % glowColors.length;
+            }, 1500);
+        });
+    </script>
 </body>
 </html>
