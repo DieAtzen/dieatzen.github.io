@@ -3,13 +3,21 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     overflow-x: hidden;
+    background: #1a1a1a;
+    color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .header {
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -18,20 +26,21 @@ body, html {
 .header h1 {
     margin: 0;
     font-size: 3rem;
+    font-weight: bold;
 }
 
 .discord-button {
     display: flex;
     align-items: center;
-    margin-top: 10px;
-    padding: 10px 20px;
+    margin-top: 20px;
+    padding: 15px 30px;
     background: #5865F2;
     color: white;
     text-decoration: none;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .discord-button i {
@@ -40,26 +49,29 @@ body, html {
 
 .discord-button:hover {
     background-color: #4752c4;
+    transform: scale(1.05);
 }
 
 .main-content {
+    flex: 1;
     padding: 20px;
-    background: #f5f5f5;
-    min-height: 100vh;
     text-align: center;
+    background: #2e2e2e;
+    overflow-y: auto;
 }
 
 .info h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff7e5f;
 }
 
 .link {
     display: block;
-    color: #333;
+    color: #f5f5f5;
     text-decoration: none;
     font-size: 1.5rem;
-    margin: 10px 0;
+    margin: 15px 0;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -68,7 +80,7 @@ body, html {
 }
 
 .link:hover {
-    color: #ff7e5f;
+    color: #feb47b;
     transform: scale(1.05);
 }
 
@@ -85,7 +97,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
-    color: white;
+    color: #f5f5f5;
     cursor: pointer;
     text-align: center;
     z-index: 1000;
