@@ -3,7 +3,6 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
-    overflow: hidden;
 }
 
 .background-container {
@@ -69,6 +68,12 @@ h1 {
     font-size: 2rem;
     color: white;
     animation: bounce 1.5s infinite;
+    text-align: center;
+}
+
+.scroll-indicator p {
+    margin: 5px 0 0;
+    font-size: 1rem;
 }
 
 @keyframes bounce {
@@ -84,8 +89,7 @@ h1 {
 }
 
 .scrollable-content {
-    height: 100vh;
-    overflow-y: auto;
+    height: 200vh; /* Make sure content is scrollable */
     background: #f0f0f0;
     display: flex;
     justify-content: center;
