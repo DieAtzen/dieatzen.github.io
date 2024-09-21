@@ -11,18 +11,10 @@ body, html {
 }
 
 body {
-    background: linear-gradient(90deg, #FF7E5F, #FEB47B, #FF9A9E, #FAD0C4, #FF7E5F);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinity;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -33,6 +25,7 @@ body {
     padding: 30px;
     max-width: 400px;
     width: 100%;
+    z-index: 1; 
 }
 
 .header h1 {
