@@ -88,6 +88,6 @@ body {
     right: 0;
     bottom: 0;
     opacity: 0;
-    transition: opacity 1.5s ease;
+    transition: opacity 2s ease; 
     z-index: 1; 
 }
