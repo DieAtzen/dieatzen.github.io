@@ -9,8 +9,20 @@ const colors = [
 let currentIndex = 0;
 
 function changeBackgroundColor() {
-    document.body.style.backgroundColor = colors[currentIndex];
+    const overlay = document.getElementById('colorOverlay');
+
+
+    overlay.style.backgroundColor = colors[currentIndex];
+    overlay.style.opacity = 1; // Start fading in
+
+
+    setTimeout(() => {
+        overlay.style.opacity = 0; 
+    }, 1500); 
+
     currentIndex = (currentIndex + 1) % colors.length;
 }
 
+
+changeBackgroundColor();
 setInterval(changeBackgroundColor, 3000); 
