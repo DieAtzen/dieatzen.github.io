@@ -3,7 +3,8 @@ const colors = [
     '#FEB47B',
     '#FF9A9E',
     '#FAD0C4',
-    '#FF7E5F',
+    '#FF5B8C',
+    '#FFC371',
 ];
 
 let currentIndex = 0;
@@ -13,16 +14,21 @@ function changeBackgroundColor() {
 
 
     overlay.style.backgroundColor = colors[currentIndex];
-    overlay.style.opacity = 1; // Start fading in
+    overlay.style.opacity = 1;
 
 
     setTimeout(() => {
         overlay.style.opacity = 0; 
-    }, 1500); 
+    }, 2000);
 
     currentIndex = (currentIndex + 1) % colors.length;
 }
 
 
+particlesJS.load('body', 'particles.json', function() {
+    console.log('particles.js loaded - callback called');
+});
+
+
 changeBackgroundColor();
-setInterval(changeBackgroundColor, 3000); 
+setInterval(changeBackgroundColor, 5000); 
